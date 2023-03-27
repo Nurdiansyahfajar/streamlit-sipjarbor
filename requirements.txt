@@ -9,3 +9,4 @@ plotly==5.13.1
 pywhatkit==5.4
 folium==0.14.0
 streamlit-folium==0.11.1
+dotenv
