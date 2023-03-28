@@ -635,16 +635,16 @@ def upload():
     DB_PASSWORD = st.secrets["sql"]["DB_PASSWORD"]
     
     # Koneksi ke database
-#     mydb = mysql.connector.connect(
+    mydb = mysql.connector.connect(
    
-#         host=DB_HOST,
-#         port=DB_PORT,
-#         user=DB_USERNAME,
-#         password=DB_PASSWORD,
-#         database=DB_DATABASE
+        host=DB_HOST,
+        port=DB_PORT,
+        user=DB_USERNAME,
+        password=DB_PASSWORD,
+        database=DB_DATABASE
 
-#     )
-#     cursor = mydb.cursor()
+    )
+    cursor = mydb.cursor()
 
     st.title('Upload Data Monitoring')
 
