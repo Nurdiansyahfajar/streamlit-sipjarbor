@@ -635,16 +635,12 @@ def upload():
     DB_PASSWORD = st.secrets["sql"]["DB_PASSWORD"]
     
     # Koneksi ke database
-    mydb = mysql.connector.connect(
-   
-        host=DB_HOST,
-        port=DB_PORT,
-        user=DB_USERNAME,
-        password=DB_PASSWORD,
-        database=DB_DATABASE
+     db_host=DB_HOST,
+     db_port=DB_PORT,
+     db_user=DB_USERNAME,
+     db_password=DB_PASSWORD,
+     db_database=DB_DATABASE
 
-    )
-    cursor = mydb.cursor()
 
     st.title('Upload Data Monitoring')
 
@@ -713,7 +709,7 @@ def upload():
             try:
                 # Terhubung ke database
                 cnx = mysql.connector.connect(
-                    user=user, password=password, host=host, database=database, ssl_disabled=True
+                    user=db_user, password=db_password, host=db_host, database=db_database, ssl_disabled=True
                 )
 
                 # Buat cursor untuk melakukan operasi database
