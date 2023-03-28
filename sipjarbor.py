@@ -624,11 +624,11 @@ def potensi():
 def upload():
     # Load nilai .env
 #     load_dotenv()
-#     db_name = os.getenv("DB_DATABASE")
-#     db_user = os.getenv("DB_USERNAME")
-#     db_password = os.getenv("DB_PASSWORD")
-#     db_host = os.getenv("DB_HOST")
-#     db_port = os.getenv("DB_PORT")
+    db_name =DB_DATABASE
+    db_user =DB_USERNAME
+    db_password =DB_PASSWORD
+    db_host =DB_HOST
+    db_port =DB_PORT
 
     st.title('Upload Data Monitoring')
 
