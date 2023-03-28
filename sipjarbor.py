@@ -635,10 +635,10 @@ def upload():
     DB_PASSWORD = st.secrets["sql"]["DB_PASSWORD"]
     
     # Koneksi ke database
-     db_host=DB_HOST,
-     db_port=DB_PORT,
-     db_user=DB_USERNAME,
-     db_password=DB_PASSWORD,
+     db_host=DB_HOST
+     db_port=DB_PORT
+     db_user=DB_USERNAME
+     db_password=DB_PASSWORD
      db_database=DB_DATABASE
 
 
