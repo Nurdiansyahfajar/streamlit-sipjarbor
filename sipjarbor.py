@@ -713,7 +713,7 @@ def upload():
             try:
                 # Terhubung ke database
                 cnx = mysql.connector.connect(
-                    user=DB_USER, password=DB_PASSWORD, host=DB_HOST, database=DB_NAME, ssl_disabled=True
+                    user=user, password=password, host=host, database=database, ssl_disabled=True
                 )
 
                 # Buat cursor untuk melakukan operasi database
