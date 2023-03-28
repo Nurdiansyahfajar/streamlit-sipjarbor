@@ -41,8 +41,15 @@ def home():
     # load_dotenv()
 
     # Set locale ke bahasa Indonesia dan format uang Rupiah
-#     locale.setlocale(locale.LC_ALL, 'id_ID')
+    # locale.setlocale(locale.LC_ALL, 'id_ID')
 
+    # Menghubungkan dengan secrets streamlit share
+    DB_HOST = st.secrets["DB_HOST"]
+    DB_PORT = st.secrets["DB_PORT"]
+    DB_DATABASE = st.secrets["DB_DATABASE"]
+    DB_USERNAME = st.secrets["DB_USERNAME"]
+    DB_PASSWORD = st.secrets["DB_PASSWORD"]
+    
     # Koneksi ke database
     mydb = mysql.connector.connect(
         host=os.getenv('DB_HOST'),
