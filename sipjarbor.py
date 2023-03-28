@@ -41,7 +41,7 @@ def home():
     # load_dotenv()
 
     # Set locale ke bahasa Indonesia dan format uang Rupiah
-    locale.setlocale(locale.LC_ALL, 'id_ID')
+#     locale.setlocale(locale.LC_ALL, 'id_ID')
 
     # Koneksi ke database
     mydb = mysql.connector.connect(
