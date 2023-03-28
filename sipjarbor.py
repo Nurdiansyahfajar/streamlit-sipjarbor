@@ -600,10 +600,6 @@ def potensi():
     st.sidebar.markdown(f"Plat Merah: **{total_merah:,}**")
     st.sidebar.markdown(f"Plat Kuning: **{total_kuning:,}**")
 
-    # membuat objek peta folium dengan koordinat Bogor Jawa Barat sebagai titik tengah peta
-    map = folium.Map(location=[-6.59680, 106.7899], zoom_start=100)
-
-    map
 
 # Konversi latitude dan longitude ke float
     df['latitude'] = df['latitude'] * 1e-6
