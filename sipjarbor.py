@@ -13,7 +13,7 @@ import json
 import urllib.parse
 import webbrowser
 from mysql.connector import Error
-import pywhatkit as kit
+# import pywhatkit as kit
 import folium
 from streamlit_folium import folium_static
 
@@ -919,33 +919,33 @@ def blast():
     combined_df['SEND Whatsapp Blast ANEV'] = ''
 
     # Menambahkan tombol "SEND" pada tampilan Streamlit
-    if st.button('SEND Whatsapp Blast ANEV'):
-        for loket, row in combined_df.iterrows():
+#     if st.button('SEND Whatsapp Blast ANEV'):
+#         for loket, row in combined_df.iterrows():
             
-            message = f'Hai *{loket}* ini adalah SIPjarbor\nBerikut adalah Hasil pendapatan {loket} sampai dengan tanggal {last_update}\n\nKD : {"Rp {:,.0f}".format(row["KD"])} dan Tahun Lalu {"Rp {:,.0f}".format(row["KD_last_year"])}\nSW : {"Rp {:,.0f}".format(row["SW"])}  dan Tahun Lalu {"Rp {:,.0f}".format(row["SW_last_year"])}\nDENDA : {"Rp {:,.0f}".format(row["DENDA"])}  dan Tahun Lalu {"Rp {:,.0f}".format(row["DENDA_last_year"])}\nTOTAL : {"Rp {:,.0f}".format(row["TOTAL"])}  dan Tahun Lalu {"Rp {:,.0f}".format(row["TOTAL_last_year"])}\n\nAktifitas_kd : {row["Aktifitas_kd"]}\nAktifitas_sw : {row["Aktifitas_sw"]}\nAktifitas_denda : {row["Aktifitas_denda"]}\nAktifitas_total : {row["Aktifitas_total"]}\n\nrealisasi_kd : {row["realisasi_kd"]}\nrealisasi_sw : {row["realisasi_sw"]}\nrealisasi_denda : {row["realisasi_denda"]}\nrealisasi_total : {row["realisasi_total"]}\nTarget bulanan Siklikal & Nasional sd {end_date} adalah {row["perc_siklikal"]} dan {row["perc_normal"]}\nTetap Semangat. JR BOGOR PASTI BISA..\n*URAAAAAAAA*'
-            kit.sendwhatmsg(row['TELEPON'], message, datetime.datetime.now().hour, datetime.datetime.now().minute +2)
-            combined_df.at[loket, 'SEND'] = 'Sent'
-        st.success('Whatsapp Blast Samsat successfully!')
+#             message = f'Hai *{loket}* ini adalah SIPjarbor\nBerikut adalah Hasil pendapatan {loket} sampai dengan tanggal {last_update}\n\nKD : {"Rp {:,.0f}".format(row["KD"])} dan Tahun Lalu {"Rp {:,.0f}".format(row["KD_last_year"])}\nSW : {"Rp {:,.0f}".format(row["SW"])}  dan Tahun Lalu {"Rp {:,.0f}".format(row["SW_last_year"])}\nDENDA : {"Rp {:,.0f}".format(row["DENDA"])}  dan Tahun Lalu {"Rp {:,.0f}".format(row["DENDA_last_year"])}\nTOTAL : {"Rp {:,.0f}".format(row["TOTAL"])}  dan Tahun Lalu {"Rp {:,.0f}".format(row["TOTAL_last_year"])}\n\nAktifitas_kd : {row["Aktifitas_kd"]}\nAktifitas_sw : {row["Aktifitas_sw"]}\nAktifitas_denda : {row["Aktifitas_denda"]}\nAktifitas_total : {row["Aktifitas_total"]}\n\nrealisasi_kd : {row["realisasi_kd"]}\nrealisasi_sw : {row["realisasi_sw"]}\nrealisasi_denda : {row["realisasi_denda"]}\nrealisasi_total : {row["realisasi_total"]}\nTarget bulanan Siklikal & Nasional sd {end_date} adalah {row["perc_siklikal"]} dan {row["perc_normal"]}\nTetap Semangat. JR BOGOR PASTI BISA..\n*URAAAAAAAA*'
+#             kit.sendwhatmsg(row['TELEPON'], message, datetime.datetime.now().hour, datetime.datetime.now().minute +2)
+#             combined_df.at[loket, 'SEND'] = 'Sent'
+#         st.success('Whatsapp Blast Samsat successfully!')
 
 
 
-        # tampilan aplikasi
-    st.title('Broadcast WhatsApp')
-    st.write('Masukkan pesan, pilih nomor telepon, serta lampiran dokumen atau gambar.')
+#         # tampilan aplikasi
+#     st.title('Broadcast WhatsApp')
+#     st.write('Masukkan pesan, pilih nomor telepon, serta lampiran dokumen atau gambar.')
 
-    pesan = st.text_area('Pesan (max 200 karakter)', max_chars=200)
+#     pesan = st.text_area('Pesan (max 200 karakter)', max_chars=200)
 
-    # menampilkan pilihan nomor telepon dalam bentuk checkbox
-    nomor_telepon = st.multiselect('Pilih nomor telepon', options=list(telepon.keys()))
+#     # menampilkan pilihan nomor telepon dalam bentuk checkbox
+#     nomor_telepon = st.multiselect('Pilih nomor telepon', options=list(telepon.keys()))
 
 
-    # mengirimkan pesan dan lampiran ketika tombol "Kirim Pesan" ditekan
-    if st.button('Kirim Pesan'):
-        for nomor in nomor_telepon:
-            kit.sendwhatmsg(telepon[nomor], pesan, datetime.datetime.now().hour, datetime.datetime.now().minute +1)  # kirim pesan
+#     # mengirimkan pesan dan lampiran ketika tombol "Kirim Pesan" ditekan
+#     if st.button('Kirim Pesan'):
+#         for nomor in nomor_telepon:
+#             kit.sendwhatmsg(telepon[nomor], pesan, datetime.datetime.now().hour, datetime.datetime.now().minute +1)  # kirim pesan
             
-        # Menampilkan pesan bahwa pesan teks telah berhasil dikirim
-        st.write(f'Pesan teks berhasil dikirim ke nomor {nomor}')
+#         # Menampilkan pesan bahwa pesan teks telah berhasil dikirim
+#         st.write(f'Pesan teks berhasil dikirim ke nomor {nomor}')
 
 # Fungsi untuk logout
 def logout():
