@@ -52,10 +52,13 @@ def home():
     
     # Koneksi ke database
     mydb = mysql.connector.connect(
-        host=os.getenv('DB_HOST'),
-        user=os.getenv('DB_USERNAME'),
-        password=os.getenv('DB_PASSWORD'),
-        database=os.getenv('DB_DATABASE')
+   
+        host=DB_HOST,
+        port=DB_PORT,
+        user=DB_USERNAME,
+        password=DB_PASSWORD,
+        database=DB_DATABASE
+
     )
     cursor = mydb.cursor()
 
