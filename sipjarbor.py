@@ -7,7 +7,6 @@ import plotly.express as px
 import numpy as np
 import locale
 import os
-from dotenv import load_dotenv
 import mysql.connector
 import plotly.graph_objs as go
 import json
@@ -39,7 +38,7 @@ def login():
 # Fungsi untuk menampilkan halaman home (Page 1)
 def home():
     # Load env variables
-    load_dotenv()
+    # load_dotenv()
 
     # Set locale ke bahasa Indonesia dan format uang Rupiah
     locale.setlocale(locale.LC_ALL, 'id_ID')
