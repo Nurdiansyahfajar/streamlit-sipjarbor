@@ -457,7 +457,7 @@ def home():
 # Fungsi untuk menampilkan halaman potensi (Page 2)
 def potensi():
     # Load env variables
-    load_dotenv()
+#     load_dotenv()
 
     # Koneksi ke database
     mydb = mysql.connector.connect(
