@@ -44,11 +44,11 @@ def home():
     # locale.setlocale(locale.LC_ALL, 'id_ID')
 
     # Menghubungkan dengan secrets streamlit share
-    DB_HOST = st.secrets["DB_HOST"]
-    DB_PORT = st.secrets["DB_PORT"]
-    DB_DATABASE = st.secrets["DB_DATABASE"]
-    DB_USERNAME = st.secrets["DB_USERNAME"]
-    DB_PASSWORD = st.secrets["DB_PASSWORD"]
+    DB_HOST = st.secrets["sql"]["DB_HOST"]
+    DB_PORT = st.secrets["sql"]["DB_PORT"]
+    DB_DATABASE = st.secrets["sql"]["DB_DATABASE"]
+    DB_USERNAME = st.secrets["sql"]["DB_USERNAME"]
+    DB_PASSWORD = st.secrets["sql"]["DB_PASSWORD"]
     
     # Koneksi ke database
     mydb = mysql.connector.connect(
