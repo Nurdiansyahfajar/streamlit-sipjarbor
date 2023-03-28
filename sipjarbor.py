@@ -628,7 +628,7 @@ def potensi():
 
 # Fungsi untuk menampilkan halaman upload (Page 3)
 def upload():
-   DB_HOST = st.secrets["sql"]["DB_HOST"]
+    DB_HOST = st.secrets["sql"]["DB_HOST"]
     DB_PORT = st.secrets["sql"]["DB_PORT"]
     DB_DATABASE = st.secrets["sql"]["DB_DATABASE"]
     DB_USERNAME = st.secrets["sql"]["DB_USERNAME"]
