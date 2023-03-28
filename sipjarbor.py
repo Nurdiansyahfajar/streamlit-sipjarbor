@@ -623,12 +623,12 @@ def potensi():
 # Fungsi untuk menampilkan halaman upload (Page 3)
 def upload():
     # Load nilai .env
-    load_dotenv()
-    db_name = os.getenv("DB_DATABASE")
-    db_user = os.getenv("DB_USERNAME")
-    db_password = os.getenv("DB_PASSWORD")
-    db_host = os.getenv("DB_HOST")
-    db_port = os.getenv("DB_PORT")
+#     load_dotenv()
+#     db_name = os.getenv("DB_DATABASE")
+#     db_user = os.getenv("DB_USERNAME")
+#     db_password = os.getenv("DB_PASSWORD")
+#     db_host = os.getenv("DB_HOST")
+#     db_port = os.getenv("DB_PORT")
 
     st.title('Upload Data Monitoring')
 
@@ -744,19 +744,19 @@ def upload():
 # Fungsi untuk menampilkan halaman blast (Page 4)
 def blast():
     # Load env variables
-    load_dotenv()
+#     load_dotenv()
 
     # Set locale ke bahasa Indonesia dan format uang Rupiah
-    locale.setlocale(locale.LC_ALL, 'id_ID')
+#     locale.setlocale(locale.LC_ALL, 'id_ID')
 
     # Koneksi ke database
-    mydb = mysql.connector.connect(
-    host=os.getenv('DB_HOST'),
-    user=os.getenv('DB_USERNAME'),
-    password=os.getenv('DB_PASSWORD'),
-    database=os.getenv('DB_DATABASE')
-    )
-    cursor = mydb.cursor()
+#     mydb = mysql.connector.connect(
+#     host=os.getenv('DB_HOST'),
+#     user=os.getenv('DB_USERNAME'),
+#     password=os.getenv('DB_PASSWORD'),
+#     database=os.getenv('DB_DATABASE')
+#     )
+#     cursor = mydb.cursor()
 
 
     st.title('Whatsapp Blast')
