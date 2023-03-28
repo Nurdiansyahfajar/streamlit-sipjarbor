@@ -470,13 +470,13 @@ def potensi():
 #     load_dotenv()
 
     # Koneksi ke database
-    mydb = mysql.connector.connect(
-    host=os.getenv('DB_HOST'),
-    user=os.getenv('DB_USERNAME'),
-    password=os.getenv('DB_PASSWORD'),
-    database=os.getenv('DB_DATABASE')
-    )
-    cursor = mydb.cursor()
+#     mydb = mysql.connector.connect(
+#     host=os.getenv('DB_HOST'),
+#     user=os.getenv('DB_USERNAME'),
+#     password=os.getenv('DB_PASSWORD'),
+#     database=os.getenv('DB_DATABASE')
+#     )
+#     cursor = mydb.cursor()
 
     # Membaca file database tb_potensi
     cursor.execute("SELECT * FROM tb_potensi")
