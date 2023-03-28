@@ -466,17 +466,23 @@ def home():
 
 # Fungsi untuk menampilkan halaman potensi (Page 2)
 def potensi():
-    # Load env variables
-#     load_dotenv()
-
+    DB_HOST = st.secrets["sql"]["DB_HOST"]
+    DB_PORT = st.secrets["sql"]["DB_PORT"]
+    DB_DATABASE = st.secrets["sql"]["DB_DATABASE"]
+    DB_USERNAME = st.secrets["sql"]["DB_USERNAME"]
+    DB_PASSWORD = st.secrets["sql"]["DB_PASSWORD"]
+    
     # Koneksi ke database
-#     mydb = mysql.connector.connect(
-#     host=os.getenv('DB_HOST'),
-#     user=os.getenv('DB_USERNAME'),
-#     password=os.getenv('DB_PASSWORD'),
-#     database=os.getenv('DB_DATABASE')
-#     )
-#     cursor = mydb.cursor()
+    mydb = mysql.connector.connect(
+   
+        host=DB_HOST,
+        port=DB_PORT,
+        user=DB_USERNAME,
+        password=DB_PASSWORD,
+        database=DB_DATABASE
+
+    )
+    cursor = mydb.cursor()
 
     # Membaca file database tb_potensi
     cursor.execute("SELECT * FROM tb_potensi")
@@ -622,13 +628,23 @@ def potensi():
 
 # Fungsi untuk menampilkan halaman upload (Page 3)
 def upload():
-    # Load nilai .env
-#     load_dotenv()
-    db_name =DB_DATABASE
-    db_user =DB_USERNAME
-    db_password =DB_PASSWORD
-    db_host =DB_HOST
-    db_port =DB_PORT
+   DB_HOST = st.secrets["sql"]["DB_HOST"]
+    DB_PORT = st.secrets["sql"]["DB_PORT"]
+    DB_DATABASE = st.secrets["sql"]["DB_DATABASE"]
+    DB_USERNAME = st.secrets["sql"]["DB_USERNAME"]
+    DB_PASSWORD = st.secrets["sql"]["DB_PASSWORD"]
+    
+    # Koneksi ke database
+#     mydb = mysql.connector.connect(
+   
+#         host=DB_HOST,
+#         port=DB_PORT,
+#         user=DB_USERNAME,
+#         password=DB_PASSWORD,
+#         database=DB_DATABASE
+
+#     )
+#     cursor = mydb.cursor()
 
     st.title('Upload Data Monitoring')
 
@@ -697,7 +713,7 @@ def upload():
             try:
                 # Terhubung ke database
                 cnx = mysql.connector.connect(
-                    user=db_user, password=db_password, host=db_host, database=db_name, ssl_disabled=True
+                    user=DB_USER, password=DB_PASSWORD, host=DB_HOST, database=DB_NAME, ssl_disabled=True
                 )
 
                 # Buat cursor untuk melakukan operasi database
