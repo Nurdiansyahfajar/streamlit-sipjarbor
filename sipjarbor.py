@@ -949,7 +949,7 @@ def blast():
 
     # Menambahkan kolom "SEND" pada data frame
     combined_df['SEND Whatsapp Blast ANEV'] = ''
-
+    st.button('SEND Whatsapp Blast ANEV')
     # Menambahkan tombol "SEND" pada tampilan Streamlit
 #     if st.button('SEND Whatsapp Blast ANEV'):
 #         for loket, row in combined_df.iterrows():
